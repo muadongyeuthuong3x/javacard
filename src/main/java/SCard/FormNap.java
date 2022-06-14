@@ -4,17 +4,22 @@
  */
 package SCard;
 
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Manh Cuong
  */
 public class FormNap extends javax.swing.JFrame {
-
+    private theTV thetv;
+    String otp;
     /**
      * Creates new form FormNap
      */
     public FormNap() {
+        this.thetv = TrangChu.thetv;
         initComponents();
+        //RenderOTP();
     }
 
     /**
@@ -29,16 +34,16 @@ public class FormNap extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txt_sotien = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txt_checkOTP = new javax.swing.JTextField();
+        btn_NapTien = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        txt_OTP = new javax.swing.JLabel();
+        txt_pin = new javax.swing.JPasswordField();
 
         label1.setText("label1");
         label1.getAccessibleContext().setAccessibleName("dâsd");
@@ -55,9 +60,9 @@ public class FormNap extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(102, 102, 255));
         jLabel2.setText("Số tiền muốn nạp :");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txt_sotien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txt_sotienActionPerformed(evt);
             }
         });
 
@@ -69,30 +74,24 @@ public class FormNap extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 102, 255));
         jLabel4.setText("Nhập mã pin thẻ :");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 255));
         jLabel5.setText("Mã OTP xác nhận :");
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 204, 0));
-        jButton1.setText("Nạp");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_NapTien.setBackground(new java.awt.Color(204, 255, 204));
+        btn_NapTien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_NapTien.setForeground(new java.awt.Color(0, 204, 0));
+        btn_NapTien.setText("Nạp");
+        btn_NapTien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_NapTienActionPerformed(evt);
             }
         });
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Hủy Nạp");
+        jButton2.setText("Đóng");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -103,9 +102,9 @@ public class FormNap extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(102, 102, 255));
         jLabel6.setText("Mã OTP :");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel7.setText("0346997607");
+        txt_OTP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txt_OTP.setForeground(new java.awt.Color(102, 102, 255));
+        txt_OTP.setText("unknow");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,24 +118,24 @@ public class FormNap extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_OTP, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_sotien, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(txt_checkOTP)
+                            .addComponent(txt_pin))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
+                .addContainerGap(93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addGap(69, 69, 69)
-                        .addComponent(jButton1)
+                        .addComponent(btn_NapTien)
                         .addGap(98, 98, 98))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,45 +149,110 @@ public class FormNap extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_sotien, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(26, 26, 26)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_OTP, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_checkOTP, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(btn_NapTien))
                 .addGap(36, 36, 36))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_sotienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sotienActionPerformed
         // TODO add your handling code here  :
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txt_sotienActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_NapTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NapTienActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        String pin = Arrays.toString(txt_pin.getPassword());
+        String checkotp = txt_checkOTP.getText();
+        System.out.print(checkotp);
+        if(checkotp.equals(otp) != true){
+            JOptionPane.showMessageDialog(this, "OTP không đúng.");
+        }else{
+            byte[] cmdcreateSig = {(byte) 0xA0, (byte) 0x16, (byte) 0x01, (byte) 0x00};
+            String sotien = txt_sotien.getText();
+            String st = Integer.toHexString(Integer.valueOf(sotien));
+            short verifylen=0;
+            if(Integer.valueOf(sotien)<= 255){
+                verifylen = 7;
+            }else if(Integer.valueOf(sotien)<= 4095){
+                verifylen = 9;
+            }else{
+                verifylen = 10;
+            }
+            System.out.println(st);
+            String arraysend= checkotp.concat(pin);
+            thetv.sendAPDUtoApplet(cmdcreateSig,arraysend.getBytes());
+            byte[] aa = thetv.resAPDU.getData();
+            if(aa.length ==1|| thetv.resAPDU.getSW1()!= 0x90){
+                JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Mã PIN không đúng");
+                txt_OTP.setText("OTP hết hạn.");
+                txt_checkOTP.setText("");
+            }else{
+                byte[] cmdverify = {(byte) 0xA0, (byte) 0x16, (byte) 0x02, (byte) 0x00};
+                byte[] verify = new byte[7];
+                if(verifylen == 7){
+                    byte[] b = checkotp.getBytes();
+                    System.arraycopy(b, (short)0, verify, (short)0, b.length);
+                    verify[6]= Byte.valueOf(st,16);
+                }
+                if(verifylen == 9){
+                    verify = new byte[verifylen];
+                    byte[] b = checkotp.getBytes();
+                    System.arraycopy(b, (short)0, verify, (short)0, b.length);
+                    String[] tach = st.split("",3);
+                    verify[6] = Byte.valueOf(tach[0],16);
+                    verify[7] = Byte.valueOf(tach[1],16);
+                    verify[8] = Byte.valueOf(tach[2],16);
+                }
+                if(verifylen == 10){
+                    verify = new byte[verifylen];
+                    byte[] b = checkotp.getBytes();
+                    System.arraycopy(b, (short)0, verify, (short)0, b.length);
+                    String[] tach = st.split("",4);
+                    verify[6] = Byte.valueOf(tach[0],16);
+                    verify[7] = Byte.valueOf(tach[1],16);
+                    verify[8] = Byte.valueOf(tach[2],16);
+                    verify[9] = Byte.valueOf(tach[3],16);
+                }
+                thetv.sendAPDUtoApplet(cmdverify, verify);
+                byte[] res = thetv.resAPDU.getData();
+                if(res[0] == 0x00){
+                    JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Xác thực lỗi");
+                    txt_OTP.setText("OTP hết hạn.");
+                    txt_checkOTP.setText("");
+                }else if (res[0] == 0x01){
+                    JOptionPane.showMessageDialog(this, "Giao dịch thành công.");
+                    setVisible(false);
+                }else if(res[0] == 0x02){
+                    JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Số tiền giao dịch vượt tối đa");
+                    txt_OTP.setText("OTP hết hạn.");
+                    txt_checkOTP.setText("");
+                }
+            }
+        }
+    }//GEN-LAST:event_btn_NapTienActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,9 +288,19 @@ public class FormNap extends javax.swing.JFrame {
             }
         });
     }
-
+   
+    //private void RenderOTP() {
+    //    byte[] cmdOTP = {(byte) 0xA0, (byte) 0x16, (byte) 0x00, (byte) 0x00};
+    //    thetv.sendAPDUtoApplet(cmdOTP);
+    //    byte[] a = thetv.resAPDU.getData();
+    //    otp = "";
+    //    for (int i = 0; i < a.length; i++) {
+    //        otp += thetv.byteToHex(a[i]);
+    //    }
+    //    txt_OTP.setText(otp);
+    //}
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_NapTien;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -234,10 +308,10 @@ public class FormNap extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private java.awt.Label label1;
+    private javax.swing.JLabel txt_OTP;
+    private javax.swing.JTextField txt_checkOTP;
+    private javax.swing.JPasswordField txt_pin;
+    private javax.swing.JTextField txt_sotien;
     // End of variables declaration//GEN-END:variables
 }
