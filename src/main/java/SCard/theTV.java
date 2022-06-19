@@ -26,7 +26,7 @@ public class theTV {
             List<CardTerminal> terminals = factory.terminals().list();
             System.out.println("Terminals: " + terminals);
             // lấy terminal đầu tiên
-            CardTerminal terminal = terminals.get(0);
+            CardTerminal terminal = terminals.get(1);
             // thiết lập kết nối với thẻ
             card = terminal.connect("*");
             System.out.println("card: " + card);
