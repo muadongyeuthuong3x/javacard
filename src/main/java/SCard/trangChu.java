@@ -682,7 +682,7 @@ public class TrangChu extends javax.swing.JFrame {
             System.out.println("send:"+arraysend);
             int lc = arraysend.length();
             byte datalen = (byte) lc; //do dai du lieu gui vao applet
-            byte[] cmd = {(byte) 0xA0, (byte) 0x10, (byte) 0x00, (byte) 0x00};
+            byte[] cmd = {(byte) 0xA0, (byte) 0x00, (byte) 0x00, (byte) 0x00};
             byte[] data = arraysend.getBytes();
             setCommandAPDU(cmd, (byte)lc, data, (byte)0);
             thetv.sendAPDUtoApplet(cmd, data);
@@ -841,7 +841,7 @@ public class TrangChu extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          if(connected==true){
-            byte[] cmd = {(byte) 0xA0, (byte) 0x20, (byte) 0x00, (byte) 0x00};
+            byte[] cmd = {(byte) 0xA0, (byte) 0x04, (byte) 0x00, (byte) 0x00};
             byte[] data= {0};
             setCommandAPDU(cmd,(byte)0, data, (byte)0);//hien thi apdu cmd len GUI
             thetv.sendAPDUtoApplet(cmd);
@@ -860,7 +860,7 @@ public class TrangChu extends javax.swing.JFrame {
             else if (check_pin(pin) == 1){
                 cardready =true;
                 getImage(info.getAvatar());
-                byte[] cmd = {(byte) 0xA0, (byte) 0x11, (byte) 0x00, (byte) 0x00};
+                byte[] cmd = {(byte) 0xA0, (byte) 0x01, (byte) 0x00, (byte) 0x00};
                 byte[] data= {0};
                 setCommandAPDU(cmd,(byte)0, data, (byte)0);//hien thi apdu cmd len GUI
                 thetv.sendAPDUtoApplet(cmd);
@@ -918,11 +918,11 @@ public class TrangChu extends javax.swing.JFrame {
     
      private void setImage(byte [] img){
         if(img == null) return;
-        byte[] cmd = {(byte) 0xA0, (byte) 0x12, (byte) 0x01, (byte) 0x00};
+        byte[] cmd = {(byte) 0xA0, (byte) 0x06, (byte) 0x01, (byte) 0x00};
         thetv.sendAPDUtoApplet(cmd);
         int sendlen = img.length;
         System.out.println("ảnh gửi:" +img);
-        byte[] cmnd = {(byte) 0xA0, (byte) 0x12, (byte) 0x02, (byte) 0x00};
+        byte[] cmnd = {(byte) 0xA0, (byte) 0x06, (byte) 0x02, (byte) 0x00};
         int pointer = 0;
         byte[] temp = new byte[255];
         int datalen = 255;
@@ -939,10 +939,10 @@ public class TrangChu extends javax.swing.JFrame {
     private void getImage(byte [] img){
         if(img == null) return;
         try {
-        byte[] cmd = {(byte) 0xA0, (byte) 0x13, (byte) 0x01, (byte) 0x00};
+        byte[] cmd = {(byte) 0xA0, (byte) 0x07, (byte) 0x01, (byte) 0x00};
         thetv.sendAPDUtoApplet(cmd);
         int sendlen = img.length;
-        byte[] cmnd = {(byte) 0xA0, (byte) 0x13, (byte) 0x02, (byte) 0x00};
+        byte[] cmnd = {(byte) 0xA0, (byte) 0x07, (byte) 0x02, (byte) 0x00};
         byte[] resimg= new byte[sendlen];
         int pointer=0;
         int datalen = 255;
@@ -971,7 +971,7 @@ public class TrangChu extends javax.swing.JFrame {
     public int check_pin(String pin) {
         short lc = (short) pin.length(); //do dai du lieu gui vao applet
         short le = 1;//du lieu nhan mong doi (Le)
-        byte[] cmd = {(byte) 0xA0, (byte) 0x19, (byte) 0x00, (byte) 0x00};
+        byte[] cmd = {(byte) 0xA0, (byte) 0x02, (byte) 0x00, (byte) 0x00};
         byte[] data = pin.getBytes();
         setCommandAPDU(cmd, (byte)lc, data,(byte)le);
         thetv.sendAPDUtoApplet(cmd, data);
