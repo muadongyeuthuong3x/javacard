@@ -117,7 +117,7 @@
                                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="Btn_thayanh" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_play" min="-2" max="-2" attributes="0"/>
                                           <Component id="bnt_naptien" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -189,7 +189,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="btn_sendata" max="32767" attributes="0"/>
-                                  <Component id="btn_khoitao" max="32767" attributes="0"/>
+                                  <Component id="btn_init" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -208,7 +208,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -238,7 +238,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txt_pin" min="-2" pref="172" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btn_confirm" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Btn_Xemtt" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -297,7 +297,7 @@
               </Group>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn_khoitao" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="btn_init" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="btn_clear" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="Button_Disconnect" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="txt_TTN" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -318,7 +318,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txt_pin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_confirm" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="Btn_Xemtt" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   </Group>
@@ -332,7 +332,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="bnt_naptien" min="-2" pref="26" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton11" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="btn_play" min="-2" pref="26" max="-2" attributes="0"/>
                       <EmptySpace pref="69" max="32767" attributes="0"/>
                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -548,7 +548,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_respon">
     </Component>
-    <Component class="javax.swing.JButton" name="btn_khoitao">
+    <Component class="javax.swing.JButton" name="btn_init">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -562,7 +562,7 @@
         <Property name="text" type="java.lang.String" value="Kh&#x1edf;i t&#x1ea1;o"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_khoitaoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_initActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_sendata">
@@ -840,7 +840,7 @@
         <Property name="text" type="java.lang.String" value="Nh&#x1ead;p m&#xe3; pin :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_confirm">
+    <Component class="javax.swing.JButton" name="Btn_Xemtt">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -854,7 +854,7 @@
         <Property name="text" type="java.lang.String" value="X&#xe1;c nh&#x1ead;n"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_confirmActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_XemttActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bnt_naptien">
@@ -874,7 +874,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bnt_naptienActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton11">
+    <Component class="javax.swing.JButton" name="btn_play">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -888,7 +888,7 @@
         <Property name="text" type="java.lang.String" value="Ch&#x1a1;i game"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_playActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_changePIN">

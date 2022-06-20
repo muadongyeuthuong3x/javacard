@@ -111,7 +111,7 @@ public class TrangChu extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txt_respon = new javax.swing.JTextField();
-        btn_khoitao = new javax.swing.JButton();
+        btn_init = new javax.swing.JButton();
         btn_sendata = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         Button_Unblock = new javax.swing.JButton();
@@ -135,9 +135,9 @@ public class TrangChu extends javax.swing.JFrame {
         Btn_thayanh = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        btn_confirm = new javax.swing.JButton();
+        Btn_Xemtt = new javax.swing.JButton();
         bnt_naptien = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btn_play = new javax.swing.JButton();
         btn_changePIN = new javax.swing.JButton();
         btn_capnhat = new javax.swing.JButton();
         txt_TTKT = new javax.swing.JLabel();
@@ -208,13 +208,13 @@ public class TrangChu extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(102, 102, 255));
         jLabel14.setText("Dữ Liệu");
 
-        btn_khoitao.setBackground(new java.awt.Color(204, 255, 204));
-        btn_khoitao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_khoitao.setForeground(new java.awt.Color(0, 204, 0));
-        btn_khoitao.setText("Khởi tạo");
-        btn_khoitao.addActionListener(new java.awt.event.ActionListener() {
+        btn_init.setBackground(new java.awt.Color(204, 255, 204));
+        btn_init.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_init.setForeground(new java.awt.Color(0, 204, 0));
+        btn_init.setText("Khởi tạo");
+        btn_init.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_khoitaoActionPerformed(evt);
+                btn_initActionPerformed(evt);
             }
         });
 
@@ -335,13 +335,13 @@ public class TrangChu extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(102, 102, 255));
         jLabel31.setText("Nhập mã pin :");
 
-        btn_confirm.setBackground(new java.awt.Color(204, 255, 204));
-        btn_confirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_confirm.setForeground(new java.awt.Color(0, 204, 0));
-        btn_confirm.setText("Xác nhận");
-        btn_confirm.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Xemtt.setBackground(new java.awt.Color(204, 255, 204));
+        Btn_Xemtt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Btn_Xemtt.setForeground(new java.awt.Color(0, 204, 0));
+        Btn_Xemtt.setText("Xác nhận");
+        Btn_Xemtt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_confirmActionPerformed(evt);
+                Btn_XemttActionPerformed(evt);
             }
         });
 
@@ -355,13 +355,13 @@ public class TrangChu extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(204, 255, 204));
-        jButton11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(0, 204, 0));
-        jButton11.setText("Chơi game");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        btn_play.setBackground(new java.awt.Color(204, 255, 204));
+        btn_play.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_play.setForeground(new java.awt.Color(0, 204, 0));
+        btn_play.setText("Chơi game");
+        btn_play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                btn_playActionPerformed(evt);
             }
         });
 
@@ -448,7 +448,7 @@ public class TrangChu extends javax.swing.JFrame {
                                         .addGap(50, 50, 50)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Btn_thayanh)
-                                            .addComponent(jButton11)
+                                            .addComponent(btn_play)
                                             .addComponent(bnt_naptien)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(109, 109, 109)
@@ -500,7 +500,7 @@ public class TrangChu extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btn_sendata, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_khoitao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btn_init, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btn_clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -513,7 +513,7 @@ public class TrangChu extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_TTN, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                                     .addComponent(txt_TTKT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(184, 184, 184))
+                        .addGap(243, 243, 243))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -540,7 +540,7 @@ public class TrangChu extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txt_pin, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btn_confirm)))))
+                                        .addComponent(Btn_Xemtt)))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -585,7 +585,7 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(txt_respon, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_khoitao, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_init, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button_Disconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_TTN))
@@ -603,7 +603,7 @@ public class TrangChu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Btn_Xemtt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(3, 3, 3)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -614,7 +614,7 @@ public class TrangChu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(bnt_naptien, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_play, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                         .addComponent(jLabel16))
                     .addGroup(layout.createSequentialGroup()
@@ -663,7 +663,7 @@ public class TrangChu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_claActionPerformed
 
-    private void btn_khoitaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_khoitaoActionPerformed
+    private void btn_initActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_initActionPerformed
         // TODO add your handling code here:
          if(connected == true){
             if (input == false) {
@@ -673,7 +673,7 @@ public class TrangChu extends javax.swing.JFrame {
             }
             else JOptionPane.showMessageDialog(null, "Thẻ đã có dữ liệu");
         }else JOptionPane.showMessageDialog(null, "Chưa connect thẻ");
-    }//GEN-LAST:event_btn_khoitaoActionPerformed
+    }//GEN-LAST:event_btn_initActionPerformed
 
     private void btn_sendataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendataActionPerformed
         // TODO add your handling code here:
@@ -828,11 +828,11 @@ public class TrangChu extends javax.swing.JFrame {
         }else JOptionPane.showMessageDialog(null, "Chưa connect thẻ");
     }//GEN-LAST:event_bnt_naptienActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void btn_playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_playActionPerformed
         // TODO add your handling code here:
         viewFormGame.setVisible(true);
         viewFormGame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_btn_playActionPerformed
 
     private void btn_capnhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_capnhatActionPerformed
         // TODO add your handling code here
@@ -895,7 +895,7 @@ public class TrangChu extends javax.swing.JFrame {
         }else JOptionPane.showMessageDialog(null, "Chưa connect thẻ");
     }//GEN-LAST:event_Button_UnblockActionPerformed
 
-    private void btn_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmActionPerformed
+    private void Btn_XemttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_XemttActionPerformed
         // TODO add your handling code here:
         if(connected == true){
             String pin = Arrays.toString(txt_pin.getPassword());
@@ -936,7 +936,7 @@ public class TrangChu extends javax.swing.JFrame {
                 txt_sodu.setText(""+tien);
             }else JOptionPane.showMessageDialog(null, "Bạn đã nhập sai quá số lần cho phép. Thẻ đã bị khóa!");
         }else JOptionPane.showMessageDialog(null, "Chưa connect thẻ");
-    }//GEN-LAST:event_btn_confirmActionPerformed
+    }//GEN-LAST:event_Btn_XemttActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1030,6 +1030,7 @@ public class TrangChu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Xemtt;
     private javax.swing.JButton Btn_thayanh;
     private javax.swing.JButton Button_Disconnect;
     private javax.swing.JButton Button_Unblock;
@@ -1039,10 +1040,9 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JButton btn_capnhat;
     private javax.swing.JButton btn_changePIN;
     private javax.swing.JButton btn_clear;
-    private javax.swing.JButton btn_confirm;
-    private javax.swing.JButton btn_khoitao;
+    private javax.swing.JButton btn_init;
+    private javax.swing.JButton btn_play;
     private javax.swing.JButton btn_sendata;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
