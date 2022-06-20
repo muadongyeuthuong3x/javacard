@@ -24,11 +24,11 @@ import javax.swing.JOptionPane;
  * @author Manh Cuong
  */
 public class TrangChu extends javax.swing.JFrame {
-     static infoTV info;
+    static infoTV info;
     static theTV thetv;
-    private Boolean input= false;
-    private boolean cardready= false;
-    private boolean connected= false;
+    private Boolean input = false;
+    private boolean cardready = false;
+    private boolean connected = false;
     public byte[] rsaPubKey = new byte[128];
     /**
      * Creates new form trangChu
@@ -44,15 +44,15 @@ public class TrangChu extends javax.swing.JFrame {
         txt_ins.setText(thetv.byteToHex(cmnds[1]));
         txt_p1.setText(thetv.byteToHex(cmnds[2]));
         txt_p2.setText(thetv.byteToHex(cmnds[3]));
-        txt_le.setText(thetv.byteToHex(lc));
+        txt_lc.setText(thetv.byteToHex(lc));
         //data
         String temp = "";
         for (int i = 0; i < data.length; i++) {
             temp += thetv.byteToHex(data[i]);
             temp += " ";
         }
-        txt_lc.setText(temp);
-        txt_cmd.setText(thetv.byteToHex(le));
+        txt_cmd.setText(temp);
+        txt_le.setText(thetv.byteToHex(le));
     }
     //hien thi apdu phan hoi len
     public void setResponseAPDU(byte[] datares,short le) {
@@ -122,7 +122,7 @@ public class TrangChu extends javax.swing.JFrame {
         anhthe = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txt_idtv = new javax.swing.JLabel();
+        txt_masv = new javax.swing.JLabel();
         txt_hoten = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         txt_ngaysinh = new javax.swing.JLabel();
@@ -276,14 +276,14 @@ public class TrangChu extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel18.setText("ID thẻ :");
+        jLabel18.setText("Mã thẻ :");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 102, 255));
         jLabel19.setText("Họ và tên : ");
 
-        txt_idtv.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txt_idtv.setForeground(new java.awt.Color(102, 102, 255));
+        txt_masv.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_masv.setForeground(new java.awt.Color(102, 102, 255));
 
         txt_hoten.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_hoten.setForeground(new java.awt.Color(102, 102, 255));
@@ -457,18 +457,6 @@ public class TrangChu extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(102, 102, 102)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(22, 22, 22)
-                                                .addComponent(txt_p2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(42, 42, 42)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txt_le, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(38, 38, 38)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(txt_lc, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 0, Short.MAX_VALUE))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -477,8 +465,20 @@ public class TrangChu extends javax.swing.JFrame {
                                                     .addComponent(jLabel19))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(txt_idtv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                                    .addComponent(txt_hoten, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                                    .addComponent(txt_masv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                                    .addComponent(txt_hoten, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(22, 22, 22)
+                                                .addComponent(txt_p2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(42, 42, 42)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txt_lc, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(38, 38, 38)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txt_le, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -558,16 +558,16 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_ins, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_cla, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_p2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_le, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_lc, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_lc, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_le, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_cmd, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -625,7 +625,7 @@ public class TrangChu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                            .addComponent(txt_idtv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txt_masv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -677,87 +677,87 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void btn_sendataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendataActionPerformed
         // TODO add your handling code here:
-         if(connected == true){
-        if (input == false) {
-            setImage(info.getAvatar());
-            getImage(info.getAvatar());
-            //chuyen du lieu xuong applet
-            String hoten = info.getHoten();
-            String ngaysinh = info.getNgaysinh();
-            String quequan = info.getQuequan();
-            String pin = info.getMapin();
-            String idtv= info.getIdtv();
-            String gioitinh = info.getGioitinh();
-            String tientk=info.getTientk();
-            
-            String arraysend = hoten.concat(".")
-                    .concat(ngaysinh).concat(".")
-                    .concat(quequan).concat(".")
-                    .concat(gioitinh).concat(".")
-                    .concat(idtv).concat(".")
-                    .concat(tientk)
-                    .concat(".")
-                    .concat(pin);
-            
-            System.out.println("send:"+arraysend);
-            int lc = arraysend.length();
-            byte datalen = (byte) lc; //do dai du lieu gui vao applet
-            byte[] cmd = {(byte) 0xA0, (byte) 0x00, (byte) 0x00, (byte) 0x00};
-            byte[] data = arraysend.getBytes();
-            setCommandAPDU(cmd, (byte)lc, data, (byte)0);
-            thetv.sendAPDUtoApplet(cmd, data);
-            byte[] dataRes = thetv.resAPDU.getData();
-            int le = thetv.resAPDU.getNr();
-            setResponseAPDU(dataRes, (byte)le);
-            String tach = new String(dataRes) ;
-            System.out.print("a:"+tach);
-            String[] a = tach.split(":");
-            String ht = a[0];
-            String ns = a[1];
-            String qq = a[2];
-            String gt = a[3];
-            String msv = a[4];
-            String stttk = a[5];
-            txt_idtv.setText(msv);
-            txt_hoten.setText(ht);
-            txt_ngaysinh.setText(ns);
-            txt_quequan.setText(qq);
-            txt_gioitinh.setText(gt);
-            txt_sodu.setText(stttk);
-            byte[] cmd1 = {(byte) 0xA0, (byte) 0x21, (byte) 0x00, (byte) 0x00};
-            thetv.sendAPDUtoApplet(cmd1);
-            byte[] b = thetv.resAPDU.getData();
-            String sodu = "";
-            for (int i = 0; i < b.length; i++) {
-                sodu += thetv.byteToHex(b[i]);
+        if(connected == true){
+            if (input == false) {
+                setImage(info.getAvatar());
+                getImage(info.getAvatar());
+                //chuyen du lieu xuong applet
+                String hoten = info.getHoten();
+                String ngaysinh = info.getNgaysinh();
+                String quequan = info.getQuequan();
+                String pin = info.getMapin();
+                String masv= info.getMasv();
+                String gioitinh = info.getGioitinh();
+                String tientk=info.getTientk();
+
+                String arraysend = hoten.concat(".")
+                        .concat(ngaysinh).concat(".")
+                        .concat(quequan).concat(".")
+                        .concat(gioitinh).concat(".")
+                        .concat(masv).concat(".")
+                        .concat(tientk)
+                        .concat(".")
+                        .concat(pin);
+
+                System.out.println("send:" + arraysend);
+                int lc = arraysend.length();
+                byte datalen = (byte) lc; //do dai du lieu gui vao applet
+                byte[] cmd = {(byte) 0xA0, (byte) 0x10, (byte) 0x00, (byte) 0x00};
+                byte[] data = arraysend.getBytes();
+                setCommandAPDU(cmd, (byte)lc, data, (byte)0);
+                thetv.sendAPDUtoApplet(cmd, data);
+                byte[] dataRes = thetv.resAPDU.getData();
+                int le = thetv.resAPDU.getNr();
+                setResponseAPDU(dataRes, (byte)le);
+                String tach = new String(dataRes) ;
+                System.out.print("a:"+tach);
+                String[] a = tach.split(":");
+                String ht = a[0];
+                String ns = a[1];
+                String qq = a[2];
+                String gt = a[3];
+                String msv = a[4];
+                String stttk = a[5];
+                txt_masv.setText(msv);
+                txt_hoten.setText(ht);
+                txt_ngaysinh.setText(ns);
+                txt_quequan.setText(qq);
+                txt_gioitinh.setText(gt);
+                txt_sodu.setText(stttk);
+                byte[] cmd1 = {(byte) 0xA0, (byte) 0x21, (byte) 0x00, (byte) 0x00};
+                thetv.sendAPDUtoApplet(cmd1);
+                byte[] b = thetv.resAPDU.getData();
+                String sodu = "";
+                for (int i = 0; i < b.length; i++) {
+                    sodu += thetv.byteToHex(b[i]);
+                }
+                txt_sodu.setText(""+Integer.valueOf(sodu,16).intValue());
+                input = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Thẻ đã có dữ liệu.");
             }
-            txt_sodu.setText(""+Integer.valueOf(sodu,16).intValue());
-            input = true;
-        } else {
-            JOptionPane.showMessageDialog(null, "Thẻ đã có dữ liệu.");
-        }
         }else JOptionPane.showMessageDialog(null, "Chưa connect thẻ");
     }//GEN-LAST:event_btn_sendataActionPerformed
 
     private void Button_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_connectActionPerformed
         // TODO add your handling code here:
         if(thetv.connectApplet() == true){//thiet lap ket noi
-        byte[] cmd = {(byte) 0x00, (byte) 0xA4, (byte) 0x04, (byte) 0x00};// select
-        //mang data gui di la RID,PIX
-        byte[] data = {(byte) 0x11, (byte) 0x22, (byte) 0x33, (byte) 0x44, (byte) 0x55, (byte) 0x00};
-        byte lc = 6;
-        byte le_expect = 2;
-        setCommandAPDU(cmd, lc, data, le_expect);//hien thi apdu cmd
-        thetv.sendAPDUtoApplet(cmd, data);
-        byte[] dataRes = thetv.resAPDU.getData();
-        int le = thetv.resAPDU.getNr();
-        setResponseAPDU(dataRes, (short)le);//hien thi du lieu phan hoi tu applet
-        JOptionPane.showMessageDialog(this, "Kết nối  thành công.");
-        txt_TTKT.setText("Succes");
-        txt_TTN.setText("");
-        Button_connect.setText("Connecting");
-       
-        connected = true;
+            byte[] cmd = {(byte) 0x00, (byte) 0xA4, (byte) 0x04, (byte) 0x00};// select
+            //mang data gui di la RID,PIX
+            byte[] data = {(byte) 0x11, (byte) 0x22, (byte) 0x33, (byte) 0x44, (byte) 0x55, (byte) 0x00};
+            byte lc = 6;
+            byte le_expect = 2;
+            setCommandAPDU(cmd, lc, data, le_expect);//hien thi apdu cmd
+            thetv.sendAPDUtoApplet(cmd, data);
+            byte[] dataRes = thetv.resAPDU.getData();
+            int le = thetv.resAPDU.getNr();
+            setResponseAPDU(dataRes, (short)le);//hien thi du lieu phan hoi tu applet
+            JOptionPane.showMessageDialog(this, "Kết nối  thành công.");
+            txt_TTKT.setText("Succes");
+            txt_TTN.setText("");
+            Button_connect.setText("Connecting");
+
+            connected = true;
         }else JOptionPane.showMessageDialog(this, "Kết nối không thành công. Hãy thử lại.");
     }//GEN-LAST:event_Button_connectActionPerformed
 
@@ -774,7 +774,7 @@ public class TrangChu extends javax.swing.JFrame {
                 int le= thetv.resAPDU.getNr();
                 setResponseAPDU(dataRes,(short) le);
                 txt_quequan.setText("");
-                txt_idtv.setText("");
+                txt_masv.setText("");
                 txt_hoten.setText("");
                 txt_ngaysinh.setText("");
                 txt_pin.setText("");
@@ -788,7 +788,7 @@ public class TrangChu extends javax.swing.JFrame {
 
     private void Btn_thayanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_thayanhActionPerformed
         // TODO add your handling code here:
-         if(connected == true && cardready == true){
+        if(connected == true && cardready == true){
         JFileChooser fc = new JFileChooser();
         int returnValue = fc.showOpenDialog(this);
         if(returnValue == JFileChooser.APPROVE_OPTION){
@@ -854,7 +854,7 @@ public class TrangChu extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(thetv.disconnectApplet() == true){
         txt_quequan.setText("");
-        txt_idtv.setText("");
+        txt_masv.setText("");
         txt_hoten.setText("");
         txt_ngaysinh.setText("");
         txt_pin.setText("");
@@ -884,7 +884,7 @@ public class TrangChu extends javax.swing.JFrame {
     private void Button_UnblockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_UnblockActionPerformed
         // TODO add your handling code here:
          if(connected==true){
-            byte[] cmd = {(byte) 0xA0, (byte) 0x04, (byte) 0x00, (byte) 0x00};
+            byte[] cmd = {(byte) 0xA0, (byte) 0x20, (byte) 0x00, (byte) 0x00};
             byte[] data= {0};
             setCommandAPDU(cmd,(byte)0, data, (byte)0);//hien thi apdu cmd len GUI
             thetv.sendAPDUtoApplet(cmd);
@@ -903,7 +903,7 @@ public class TrangChu extends javax.swing.JFrame {
             else if (check_pin(pin) == 1){
                 cardready =true;
                 getImage(info.getAvatar());
-                byte[] cmd = {(byte) 0xA0, (byte) 0x01, (byte) 0x00, (byte) 0x00};
+                byte[] cmd = {(byte) 0xA0, (byte) 0x11, (byte) 0x00, (byte) 0x00};
                 byte[] data= {0};
                 setCommandAPDU(cmd,(byte)0, data, (byte)0);//hien thi apdu cmd len GUI
                 thetv.sendAPDUtoApplet(cmd);
@@ -912,18 +912,18 @@ public class TrangChu extends javax.swing.JFrame {
                 setResponseAPDU(dataRes, (byte)le);//hien thi du lieu phan hoi tu applet
                 String tach = new String(dataRes) ;
                 //System.out.print("a:"+tach);
-                 String[] a = tach.split(":");
-                 String ht = a[0];
-                 String ns = a[1];
-                 String qq = a[2];
-                 String gt = a[3];
-                 String msv = a[4];
-                 String stttk = a[5];
-                 txt_idtv.setText(msv);
-                 txt_hoten.setText(ht);
-                 txt_ngaysinh.setText(ns);
-                 txt_quequan.setText(qq);
-                 txt_gioitinh.setText(gt);
+                String[] a = tach.split(":");
+                String ht = a[0];
+                String ns = a[1];
+                String qq = a[2];
+                String gt = a[3];
+                String msv = a[4];
+                String stttk = a[5];
+                txt_masv.setText(msv);
+                txt_hoten.setText(ht);
+                txt_ngaysinh.setText(ns);
+                txt_quequan.setText(qq);
+                txt_gioitinh.setText(gt);
                 txt_sodu.setText(stttk);
                 byte[] cmd1 = {(byte) 0xA0, (byte) 0x21, (byte) 0x00, (byte) 0x00};
                 thetv.sendAPDUtoApplet(cmd1);
@@ -959,13 +959,13 @@ public class TrangChu extends javax.swing.JFrame {
         });
     }
     
-     private void setImage(byte [] img){
+    private void setImage(byte [] img){
         if(img == null) return;
-        byte[] cmd = {(byte) 0xA0, (byte) 0x06, (byte) 0x01, (byte) 0x00};
+        byte[] cmd = {(byte) 0xA0, (byte) 0x12, (byte) 0x01, (byte) 0x00};
         thetv.sendAPDUtoApplet(cmd);
         int sendlen = img.length;
-        System.out.println("ảnh gửi:" +img);
-        byte[] cmnd = {(byte) 0xA0, (byte) 0x06, (byte) 0x02, (byte) 0x00};
+        System.out.println("Image send:" + img);
+        byte[] cmnd = {(byte) 0xA0, (byte) 0x12, (byte) 0x02, (byte) 0x00};
         int pointer = 0;
         byte[] temp = new byte[255];
         int datalen = 255;
@@ -982,30 +982,30 @@ public class TrangChu extends javax.swing.JFrame {
     private void getImage(byte [] img){
         if(img == null) return;
         try {
-        byte[] cmd = {(byte) 0xA0, (byte) 0x07, (byte) 0x01, (byte) 0x00};
-        thetv.sendAPDUtoApplet(cmd);
-        int sendlen = img.length;
-        byte[] cmnd = {(byte) 0xA0, (byte) 0x07, (byte) 0x02, (byte) 0x00};
-        byte[] resimg= new byte[sendlen];
-        int pointer=0;
-        int datalen = 255;
-        while(sendlen >0){
-            thetv.sendAPDUtoApplet(cmnd);
-            byte[] temp = thetv.resAPDU.getData();
-            System.arraycopy(temp, 0, resimg, pointer, datalen);
-            pointer += 255;
-            sendlen -= 255;
-            if(sendlen < 255){
-                datalen = sendlen;
+            byte[] cmd = {(byte) 0xA0, (byte) 0x13, (byte) 0x01, (byte) 0x00};
+            thetv.sendAPDUtoApplet(cmd);
+            int sendlen = img.length;
+            byte[] cmnd = {(byte) 0xA0, (byte) 0x13, (byte) 0x02, (byte) 0x00};
+            byte[] resimg = new byte[sendlen];
+            int pointer=0;
+            int datalen = 255;
+            while(sendlen >0){
+                thetv.sendAPDUtoApplet(cmnd);
+                byte[] temp = thetv.resAPDU.getData();
+                System.arraycopy(temp, 0, resimg, pointer, datalen);
+                pointer += 255;
+                sendlen -= 255;
+                if(sendlen < 255){
+                    datalen = sendlen;
+                }
             }
-        }
-        System.out.println("ảnh res:" +resimg);
-        ByteArrayInputStream bais= new ByteArrayInputStream(resimg);
-        BufferedImage b;
-        b = ImageIO.read(bais);
-        ImageIcon icon= new ImageIcon(b.getScaledInstance(anhthe.getWidth(),anhthe.getHeight(), Image.SCALE_SMOOTH));
-        icon.getImage();
-        anhthe.setIcon(icon);
+            System.out.println("Image receive:" + resimg);
+            ByteArrayInputStream bais = new ByteArrayInputStream(resimg);
+            BufferedImage b;
+            b = ImageIO.read(bais);
+            ImageIcon icon= new ImageIcon(b.getScaledInstance(anhthe.getWidth(),anhthe.getHeight(), Image.SCALE_SMOOTH));
+            icon.getImage();
+            anhthe.setIcon(icon);
         } catch (IOException ex) {
             Logger.getLogger(TrangChu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1014,7 +1014,7 @@ public class TrangChu extends javax.swing.JFrame {
     public int check_pin(String pin) {
         short lc = (short) pin.length(); //do dai du lieu gui vao applet
         short le = 1;//du lieu nhan mong doi (Le)
-        byte[] cmd = {(byte) 0xA0, (byte) 0x02, (byte) 0x00, (byte) 0x00};
+        byte[] cmd = {(byte) 0xA0, (byte) 0x19, (byte) 0x00, (byte) 0x00};
         byte[] data = pin.getBytes();
         setCommandAPDU(cmd, (byte)lc, data,(byte)le);
         thetv.sendAPDUtoApplet(cmd, data);
@@ -1080,10 +1080,10 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JTextField txt_cmd;
     private javax.swing.JLabel txt_gioitinh;
     private javax.swing.JLabel txt_hoten;
-    private javax.swing.JLabel txt_idtv;
     private javax.swing.JTextField txt_ins;
     private javax.swing.JTextField txt_lc;
     private javax.swing.JTextField txt_le;
+    private javax.swing.JLabel txt_masv;
     private javax.swing.JLabel txt_ngaysinh;
     private javax.swing.JTextField txt_p1;
     private javax.swing.JTextField txt_p2;

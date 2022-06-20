@@ -9,19 +9,19 @@ package SCard;
  * @author Admin
  */
 public class infoTV {
-     private String hoten;
+    private String hoten;
     private String ngaysinh;
     private String quequan;
-    private String idtv;
+    private String masv;
     private String gioitinh;
     private String mapin;
     private byte[] avatar;
     private String tientk;
-    public infoTV(String hoten, String ngaysinh, String quequan, String idtv, String gioitinh, String mapin,String tientk, byte[] avatar) {
+    public infoTV(String hoten, String ngaysinh, String quequan, String masv, String gioitinh, String mapin,String tientk, byte[] avatar) {
         this.hoten = hoten;
         this.ngaysinh = ngaysinh;
         this.quequan = quequan;
-        this.idtv = idtv;
+        this.masv = masv;
         this.gioitinh = gioitinh;
         this.mapin = mapin;
         this.tientk=tientk;
@@ -50,8 +50,8 @@ public class infoTV {
         return quequan;
     }
 
-    public String getIdtv() {
-        return idtv;
+    public String getMasv() {
+        return masv;
     }
     public String getTientk() {
         return tientk;
@@ -80,8 +80,8 @@ public class infoTV {
         this.quequan = quequan;
     }
 
-    public void setIdtv(String idtv) {
-        this.idtv = idtv;
+    public void setMasv(String masv) {
+        this.masv = masv;
     }
 
     public void setGioitinh(String gioitinh) {
